@@ -11,7 +11,7 @@ body {
     right: 0;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    border-radius: 40%;
     overflow: hidden;
     z-index: 1; /* make sure the image is on top of the nav bar */
   }
