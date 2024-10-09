@@ -49,3 +49,8 @@ nav {
   nav a:hover {
     color: #ccc;
   }
+  .faqp{
+    color:darksalmon;
+    font-size: 24;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
