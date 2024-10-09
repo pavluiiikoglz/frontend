@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: radial-gradient(farthest-corner at 50% 50%, #3498db, #2ecc71); /* градиентный фон от синего к зеленому */
+}
+.image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1; /* make sure the image is on top of the nav bar */
+  }
+nav {
+  background-image: linear-gradient(to bottom, #f1c40f, #e67e73); /* градиентный фон от оранжевого к красному */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* добавлено свойство box-shadow для навигационного бара */
+}
+   nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%; /* make the ul full width */
+  }
+  
+  nav li {
+    flex: 1; /* make each li take equal space */
+    text-align: center;
+  }
+  
+  nav a {
+    color: #7FFF00;
+    text-decoration: none;
+    width: 100%; /* make the a tag full width */
+    display: block;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
