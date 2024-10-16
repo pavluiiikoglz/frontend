@@ -1,86 +1,160 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-image: radial-gradient(farthest-corner at 50% 50%, #3498db, #2ecc71); /* градиентный фон от синего к зеленому */
-}
-.image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    z-index: 1; /* make sure the image is on top of the nav bar */
-  }
-.game-title-container{
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.game-title{
-    background-image: linear-gradient(to bottom,#8A2BE2,#00BFFF);
-    width: 100px;
-    height: 250px;
-    margin: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba (0,0,0,0.1);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-}
-.game-title img{
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.game-title span{
-    font-size: 16px;
-    font-weight: bolder;
-    margin-top: auto;
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #333, #444, #555);
+  background-size: 200% 200%;
+  animation: gradient-move 10s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 nav {
-    background-image: linear-gradient(to bottom, #f1c40f, #e67e73); /* градиентный фон от оранжевого к красному */
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* добавлено свойство box-shadow для навигационного бара */
+  background-color: rgba(51, 51, 51, 0.8);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #444;
 }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%; /* make the ul full width */
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+  margin: 0 5px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+.game-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: calc(100vh - 60px); /* Учитываем высоту навигации */
+  padding: 20px; /* Уменьшенный отступ для предотвращения переполнения текста */
+  background-color: transparent; /* Убираем фон контейнера */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: auto; /* Добавляем прокрутку, если содержимое превышает размеры */
+}
+
+.game-title {
+  flex: 1 1 200px; /* Минимальная ширина для контейнеров */
+  height: 300px;
+  background-color: #333; /* Темный фон для контейнеров */
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+  margin: 20px; /* Отступ между контейнерами */
+  color: #fff; /* Цвет текста */
+  text-align: center; /* Центрируем текст */
+  padding: 20px; /* Увеличен отступ для лучшего размещения текста */
+  overflow: hidden; /* Скрываем переполнение текста */
+}
+
+.game-title img {
+  width: 60%; /* Уменьшен размер изображений */
+  height: auto;
+  margin-bottom: 10px; /* Уменьшен отступ для лучшего восприятия */
+  border-radius: 10%; /* Скругление углов изображений */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-title:hover {
+  transform: scale(1.05); /* Уменьшено увеличение при наведении */
+}
+
+.game-title span {
+  font-size: 16px; /* Уменьшен шрифт для лучшего размещения */
+  font-weight: bold;
+  margin-top: 5px; /* Уменьшен отступ для предотвращения переполнения текста */
+}
+@media (max-width: 768px) {
+  .game-title-container {
+    flex-direction: column;
   }
-  
-  nav li {
-    flex: 1; /* make each li take equal space */
-    text-align: center;
+  .game-title {
+    width: 100%;
+    margin: 10px 0;
   }
-  
-  nav a {
-    color: #7FFF00;
-    text-decoration: none;
-    width: 100%; /* make the a tag full width */
-    display: block;
+}
+
+@media (max-width: 480px) {
+  .nav ul {
+    flex-direction: column;
   }
-  
-  nav a:hover {
-    color: #ccc;
+  .nav li {
+    margin: 10px 0;
   }
+  .game-title {
+    height: auto;
+  }
+  .game-title img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .game-title {
+    height: auto;
+  }
+  .game-title img {
+    width: 100%;
+    height: auto;
+  }
+}

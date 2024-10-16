@@ -3,128 +3,164 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: radial-gradient(farthest-corner at 50% 50%, #3498db, #2ecc71); /* градиентный фон от синего к зеленому */
+  background-image: radial-gradient(farthest-corner at 50% 50%, #333, #222);
+  background-size: 200% 200%;
+  animation: gradient-move 10s ease-in-out infinite;
 }
-.image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 40%;
-    overflow: hidden;
-    z-index: 1; /* make sure the image is on top of the nav bar */
+
+@keyframes gradient-move {
+  0% {
+      background-position: 0% 50%;
   }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+header {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 nav {
-  background-image: linear-gradient(to bottom, #f1c40f, #e67e73); /* градиентный фон от оранжевого к красному */
+  background-image: linear-gradient(to bottom, #333, #222);
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* добавлено свойство box-shadow для навигационного бара */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #444;
 }
-   nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%; /* make the ul full width */
-  }
-  
-  nav li {
-    flex: 1; /* make each li take equal space */
-    text-align: center;
-  }
-  
-  nav a {
-    color: #7FFF00;
-    text-decoration: none;
-    width: 100%; /* make the a tag full width */
-    display: block;
-  }
-  
-  nav a:hover {
-    color: #ccc;
-  }
-  .faqp{
-    color:darksalmon;
-    font-size: 24;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  .grid-container{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-  }
 
-  .grid-items{
-    background-color: #e67e73;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    padding: 10px;
-  }
-  
-  .grid-items img{
-    width: 75%;
-    height: 125px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-  }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-  .grid-items h1{
-    font-family:'Times New Roman', Times, serif;
-    font-size: x-large;
-    font-weight: bolder;
-  }
+nav li {
+  flex: 1;
+  text-align: center;
+}
 
-  .slider-container {
-    position: relative;
-    width: 80%;
-    margin: 40px auto;
-    overflow: hidden;
-  }
-  
-  .slider-item {
-    display: none;
-    width: 100%;
-    height: 150px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .slider-item.active {
-    display: block;
-  }
-  
-  .slider-item img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .slider-prev, .slider-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }
-  
-  .slider-prev {
-    left: 10px;
-  }
-  
-  .slider-next {
-    right: 10px;
-  }
-  
-  .slider-prev:hover, .slider-next:hover {
-    background-color: #ccc;
-  }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+.image {
+  width: 60px; /* Adjusted to fit the navbar */
+  height: 60px; /* Adjusted to fit the navbar */
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.news-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #fff;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.grid-container-news {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-container-accounts {
+  display: grid; /* Используйте grid для контейнера аккаунтов */
+  grid-template-columns: repeat(3, 1fr); /* Пример: 3 колонки */
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-items {
+  background-color: #666; /* Dark gray background */
+  border: 1px solid #444; /* Dark gray border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Add some padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Add a subtle shadow */
+  transition: transform 0.2s ease-in-out; /* Add a transition effect */
+  width: 200px; /* Set the width of the tab */
+  height: 150px; /* Set the height of the tab */
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements horizontally */
+  align-items: center; /* Center elements vertically */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
+.grid-items:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Add a stronger shadow on hover */
+}
+
+.grid-items img {
+  width: 100%; /* Make the image full-width */
+  height: auto; /* Auto-height for the image */
+  border-radius: 10px; /* Rounded corners for the image */
+  transition: opacity 0.2s ease-in-out; /* Add a transition effect */
+}
+
+.grid-items img:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+
+.grid-items h1 {
+  font-family: 'Times New Roman', Times, serif; /* Font family */
+  font-size: x-large; /* Font size */
+  font-weight: bolder; /* Font weight */
+  color: #fff; /* Text color */
+  text-align: center; /* Center the text */
+  margin: 10px 0 0; /* Add some margin */
+}
+.grid-items p {
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Font weight */
+  color: #fff; /* Text color */
+  text-align: center; /* Center the text */
+  margin: 10px 0; /* Add some margin */
+}
+
+footer {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: #ccc;
+}
