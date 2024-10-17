@@ -1,8 +1,8 @@
-* {
+/** {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+}*/
 
 body {
   font-family: 'Roboto', sans-serif; /* Шрифт для текста */
@@ -11,6 +11,11 @@ body {
   color: #e0e0e0; /* Светлый текст */
   line-height: 1.6; /* Улучшенная читаемость */
   overflow: hidden;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовков */
 }
 
 .image {
@@ -25,15 +30,18 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-nav {
-  background-color: #21252b; /* Темный фон навигации */
-  height: 60px;
+/* Стили для заголовка */
+header {
+  background-color: #21252b; /* Темный фон заголовка */
+  padding: 15px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
 }
 
 nav ul {
@@ -41,29 +49,30 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  width: 100%;
 }
 
 nav li {
-  flex: 1;
-  text-align: center;
-  margin: 0 5px;
+  margin: 0 15px;
 }
 
 nav a {
-  color: #ffffff; /* Цвет текста навигации */
+  color: #ffffff;
   text-decoration: none;
-  width: 100%;
-  display: block;
-  transition: color 0.2s ease-in-out;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-  color: #ccc; /* Цвет текста при наведении */
+  background-color: #444; /* Эффект наведения */
+  border-radius: 5px;
 }
 
+.image {
+  width: 50px; /* Размер изображения профиля */
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 .game-title-container {
   display: flex;
   flex-wrap: wrap;
