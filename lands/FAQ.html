@@ -1,32 +1,70 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
-    <link rel="stylesheet" href="../styles/style.css"
+    <link rel="stylesheet" href="../styles/faq.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <a href ="lands/profile.html"><img src ="../images/ava.jpg" class="image" href="lands/profile.html"></a>
-    <nav>
-        <ul>
-          <li><a href="../index.html">Main</a></li>
-          <li><a href="accounts.html">Accounts</a></li>
-          <li><a href="games.html">Games</a></li>
-          <li><a href="FAQ.html">FAQ</a></li>
-        </ul>
-      </nav>
-<p class="faqp">Часто задаваемые вопросы</p>
-<ul>Вопрос1
-    <li>Ответ1</li>
-</ul>
-<ul>Вопрос2
-    <li>Ответ2</li>
-</ul>
-<br><br><br><br>
-<p>Здесь вы можете оставить свой вопрос</p><br>
-<input type="text" name="ask">
-<button>Спросить</button>
-    
+    <header>
+        <!--<a href="lands/profile.html"><img src="../images/ava.jpg" class="image"></a>-->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Main</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+        <a href="lands/profile.html"><img src="../images/ava.jpg" class="image"></a>
+    </header>
+
+    <main>
+        <h1 class="faqp">Часто задаваемые вопросы</h1>
+
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Поиск по FAQ...">
+        </div>
+
+        <div id="faq-container">
+            <div class="faq-item">
+                <div class="faq-question"><p>Вопрос 1</p></div>
+                <div class="faq-answer"><p>Ответ 1</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><p>Вопрос 2</p></div>
+                <div class="faq-answer"><p>Ответ 2</p></div>
+            </div>
+        <!-- Add more questions and answers here -->
+        </div>
+
+        <h2>Задать вопрос</h2>
+        <div class="search-bar">
+            <input type="text" name="ask" placeholder="Ваш вопрос" id="search">
+            <button>Спросить</button>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                $('.faq-question').click(function() {
+                    $(this).next('.faq-answer').slideToggle();
+                });
+
+                $('#search').on('input', function() {
+                    var searchTerm = $(this).val().toLowerCase();
+                    $('.faq-item').each(function() {
+                        var question = $(this).find('.faq-question').text().toLowerCase();
+                        $(this).toggle(question.includes(searchTerm));
+                    });
+                });
+            });
+        </script>
+    </main>
+
+    <footer>
+        
+    </footer>
 </body>
 </html>
